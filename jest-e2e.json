@@ -1,0 +1,7 @@
+{
+  "modulePathIgnorePatterns": ["/node_modules/", "<rootDir>/postgres_data"],
+  "moduleFileExtensions": ["ts", "js"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e.test.ts$"
+}

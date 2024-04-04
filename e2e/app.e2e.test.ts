@@ -5,7 +5,7 @@ describe("GET /", () => {
   const app = createApp();
   const api = request(app);
   const server = app.listen(3000);
-  afterEach(() => {
+  afterAll(() => {
     server.close();
   });
   test("should return 200 OK", async () => {

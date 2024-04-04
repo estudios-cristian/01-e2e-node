@@ -14,9 +14,9 @@ const kyesUser = [
 describe("Test for /users", () => {
   const app = createApp();
   const api = request(app);
-  const server = app.listen(3001);
+  const server = app.listen(3000);
   const path = "/api/v1/users";
-  afterEach(() => {
+  afterAll(() => {
     server.close();
   });
   describe("POST /users", () => {

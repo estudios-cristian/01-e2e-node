@@ -1,7 +1,8 @@
 import request from "supertest";
-import app from "../src/app";
+import createApp from "../src/app";
 
 describe("GET /", () => {
+  const app = createApp();
   const api = request(app);
   const server = app.listen(3000);
   afterEach(() => {

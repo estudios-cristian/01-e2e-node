@@ -3,5 +3,6 @@
   "moduleFileExtensions": ["ts", "js"],
   "rootDir": ".",
   "testEnvironment": "node",
-  "testRegex": ".e2e.test.ts$"
+  "testRegex": ".e2e.test.ts$",
+  "coverageDirectory": "coverage_e2e"
 }

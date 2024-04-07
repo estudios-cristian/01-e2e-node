@@ -1,15 +1,20 @@
 import request from "supertest";
 import createApp from "../../../src/app";
 import { models } from "../../../src/db/sequelize";
-import { User } from "../../../src/db/models/user.model";
+
+import { upSeed, downSeed } from "../../utils/seed";
 
 describe("Test for /users", () => {
   const app = createApp();
   const api = request(app);
   const server = app.listen(3001);
   const path = "/api/v1/auth";
-  afterAll(() => {
+  beforeAll(async () => {
+    await upSeed();
+  });
+  afterAll(async () => {
     server.close();
+    await downSeed();
   });
   describe("POST /login", () => {
     test("should return a 401", async () => {

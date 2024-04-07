@@ -1,6 +1,7 @@
 import request from "supertest";
 import createApp from "../../../src/app";
 import { models } from "../../../src/db/sequelize";
+import { upSeed, downSeed } from "../../utils/seed";
 
 const kyesUser = [
   "id",
@@ -16,9 +17,15 @@ describe("Test for /users", () => {
   const api = request(app);
   const server = app.listen(3000);
   const path = "/api/v1/users";
-  afterAll(() => {
-    server.close();
+  beforeAll(async () => {
+    await upSeed();
   });
+
+  afterAll(async () => {
+    server.close();
+    await downSeed();
+  });
+
   describe("POST /users", () => {
     test("should return 400 Bad Request", async () => {
       const failedInputsData = [

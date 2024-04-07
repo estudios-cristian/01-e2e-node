@@ -12,6 +12,15 @@ services:
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
 
+  postgres-2e2:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=db_e2e
+      - POSTGRES_USER=e2e
+      - POSTGRES_PASSWORD=admin123
+    ports:
+      - 5430:5432
+
   pgadmin:
     image: dpage/pgadmin4
     environment:

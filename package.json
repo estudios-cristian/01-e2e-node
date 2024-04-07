@@ -11,6 +11,8 @@
     "migrations:run": "sequelize-cli db:migrate",
     "migrations:revert": "sequelize-cli db:migrate:undo",
     "migrations:delete": "sequelize-cli db:migrate:undo:all",
+    "seed:all": "sequelize-cli db:seed:all",
+    "seed:undo": "sequelize-cli db:seed:undo",
     "e2e": "NODE_ENV=e2e jest --config ./jest-e2e.json --verbose --watchAll --runInBand "
   },
   "keywords": [],
@@ -49,6 +51,7 @@
     "passport-local": "1.0.0",
     "pg": "8.7.3",
     "sequelize": "6.21.3",
-    "sequelize-cli": "6.4.1"
+    "sequelize-cli": "6.4.1",
+    "umzug": "^3.8.0"
   }
 }

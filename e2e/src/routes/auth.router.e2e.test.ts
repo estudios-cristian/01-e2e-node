@@ -2,7 +2,7 @@ import request from "supertest";
 import createApp from "../../../src/app";
 import { models } from "../../../src/db/sequelize";
 
-import { upSeed, downSeed } from "../../utils/seed";
+import { upSeed, downSeed } from "../../utils/umzug";
 
 describe("Test for /users", () => {
   const app = createApp();
@@ -30,6 +30,7 @@ describe("Test for /users", () => {
         message: "Unauthorized",
       });
     });
+
     test("should return a 200", async () => {
       const inputData = {
         email: "admin@mail.com",

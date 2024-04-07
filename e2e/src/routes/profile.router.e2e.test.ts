@@ -1,7 +1,7 @@
 import request from "supertest";
 import createApp from "../../../src/app";
 import { models } from "../../../src/db/sequelize";
-import { upSeed, downSeed } from "../../utils/seed";
+import { upSeed, downSeed } from "../../utils/umzug";
 
 const kyesUser = [
   "id",

@@ -15,6 +15,12 @@ module.exports = {
         role: 'admin',
         created_at: new Date(),
       },
+      {
+        email: 'customer@mail.com',
+        password: hash,
+        role: 'customer',
+        created_at: new Date(),
+      },
     ]);
   },
   down: (queryInterface) => {

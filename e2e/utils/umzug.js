@@ -21,7 +21,7 @@ const upSeed = async () => {
 };
 
 const downSeed = async () => {
-  // await sequelize.drop();
+  await sequelize.drop();
 };
 
 module.exports = { upSeed, downSeed };

@@ -2,7 +2,11 @@ const express = require('express');
 
 const UserService = require('./../services/user.service');
 const validatorHandler = require('./../middlewares/validator.handler');
-const { updateUserDto, createUserDto, getUserDto } = require('../dtos/user.dto');
+const {
+  updateUserDto,
+  createUserDto,
+  getUserDto,
+} = require('../dtos/user.dto');
 
 const router = express.Router();
 const service = new UserService();
@@ -16,7 +20,8 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/:id',
+router.get(
+  '/:id',
   validatorHandler(getUserDto, 'params'),
   async (req, res, next) => {
     try {
@@ -29,7 +34,8 @@ router.get('/:id',
   }
 );
 
-router.post('/',
+router.post(
+  '/',
   validatorHandler(createUserDto, 'body'),
   async (req, res, next) => {
     try {
@@ -42,7 +48,8 @@ router.post('/',
   }
 );
 
-router.patch('/:id',
+router.patch(
+  '/:id',
   validatorHandler(getUserDto, 'params'),
   validatorHandler(updateUserDto, 'body'),
   async (req, res, next) => {
@@ -57,13 +64,14 @@ router.patch('/:id',
   }
 );
 
-router.delete('/:id',
+router.delete(
+  '/:id',
   validatorHandler(getUserDto, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
       await service.delete(id);
-      res.status(201).json({id});
+      res.status(201).json({ id });
     } catch (error) {
       next(error);
     }
@@ -71,4 +79,3 @@ router.delete('/:id',
 );
 
 module.exports = router;
-

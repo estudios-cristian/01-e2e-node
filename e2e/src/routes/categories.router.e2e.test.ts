@@ -79,7 +79,7 @@ describe("test for /categories path", () => {
           Authorization: `Bearer ${session?.access_token}`,
         })
         .send(inputData);
-      console.log(body);
+      
 
       expect(statusCode).toEqual(401);
       expect(body).toEqual({

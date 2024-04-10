@@ -4,7 +4,10 @@ const envs = {
   dev: '.env',
   e2e: '.env.e2e',
 };
-const options = { path: envs[env] };
+let options = {};
+if (envs) {
+  options = { path: envs[env] };
+}
 
 require('dotenv').config(options);
 
